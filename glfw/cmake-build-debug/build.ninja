@@ -41,21 +41,13 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/dolphilia/github/reglfw/glfw/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target glfw
+# Object build statements for STATIC_LIBRARY target glfw
 
 
 #############################################
 # Order-only phony target for glfw
 
 build cmake_object_order_depends_target_glfw: phony || .
-
-build CMakeFiles/glfw.dir/main.c.o: C_COMPILER__glfw_unscanned_Debug /Users/dolphilia/github/reglfw/glfw/main.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = CMakeFiles/glfw.dir/main.c.o.d
-  FLAGS = -g -std=gnu11 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/dolphilia/github/reglfw/glfw -I/Users/dolphilia/github/reglfw/glfw/include
-  OBJECT_DIR = CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = CMakeFiles/glfw.dir
 
 build CMakeFiles/glfw.dir/src/context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/dolphilia/github/reglfw/glfw/src/context.c || cmake_object_order_depends_target_glfw
   DEFINES = -D_GLFW_COCOA
@@ -227,21 +219,20 @@ build CMakeFiles/glfw.dir/src/nsgl_context.m.o: C_COMPILER__glfw_unscanned_Debug
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target glfw
+# Link build statements for STATIC_LIBRARY target glfw
 
 
 #############################################
-# Link the executable glfw
+# Link the static library libglfw.a
 
-build glfw: C_EXECUTABLE_LINKER__glfw_Debug CMakeFiles/glfw.dir/main.c.o CMakeFiles/glfw.dir/src/context.c.o CMakeFiles/glfw.dir/src/init.c.o CMakeFiles/glfw.dir/src/input.c.o CMakeFiles/glfw.dir/src/monitor.c.o CMakeFiles/glfw.dir/src/platform.c.o CMakeFiles/glfw.dir/src/vulkan.c.o CMakeFiles/glfw.dir/src/window.c.o CMakeFiles/glfw.dir/src/egl_context.c.o CMakeFiles/glfw.dir/src/osmesa_context.c.o CMakeFiles/glfw.dir/src/null_init.c.o CMakeFiles/glfw.dir/src/null_monitor.c.o CMakeFiles/glfw.dir/src/null_window.c.o CMakeFiles/glfw.dir/src/null_joystick.c.o CMakeFiles/glfw.dir/src/cocoa_time.c.o CMakeFiles/glfw.dir/src/posix_module.c.o CMakeFiles/glfw.dir/src/posix_thread.c.o CMakeFiles/glfw.dir/src/cocoa_init.m.o CMakeFiles/glfw.dir/src/cocoa_joystick.m.o CMakeFiles/glfw.dir/src/cocoa_monitor.m.o CMakeFiles/glfw.dir/src/cocoa_window.m.o CMakeFiles/glfw.dir/src/nsgl_context.m.o
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/Users/dolphilia/github/reglfw/glfw -Wl,-rpath,/Users/dolphilia/github/reglfw/glfw/lib  -framework Cocoa  -framework IOKit  -framework CoreFoundation
-  LINK_PATH = -L/Users/dolphilia/github/reglfw/glfw   -L/Users/dolphilia/github/reglfw/glfw/lib
+build libglfw.a: C_STATIC_LIBRARY_LINKER__glfw_Debug CMakeFiles/glfw.dir/src/context.c.o CMakeFiles/glfw.dir/src/init.c.o CMakeFiles/glfw.dir/src/input.c.o CMakeFiles/glfw.dir/src/monitor.c.o CMakeFiles/glfw.dir/src/platform.c.o CMakeFiles/glfw.dir/src/vulkan.c.o CMakeFiles/glfw.dir/src/window.c.o CMakeFiles/glfw.dir/src/egl_context.c.o CMakeFiles/glfw.dir/src/osmesa_context.c.o CMakeFiles/glfw.dir/src/null_init.c.o CMakeFiles/glfw.dir/src/null_monitor.c.o CMakeFiles/glfw.dir/src/null_window.c.o CMakeFiles/glfw.dir/src/null_joystick.c.o CMakeFiles/glfw.dir/src/cocoa_time.c.o CMakeFiles/glfw.dir/src/posix_module.c.o CMakeFiles/glfw.dir/src/posix_thread.c.o CMakeFiles/glfw.dir/src/cocoa_init.m.o CMakeFiles/glfw.dir/src/cocoa_joystick.m.o CMakeFiles/glfw.dir/src/cocoa_monitor.m.o CMakeFiles/glfw.dir/src/cocoa_window.m.o CMakeFiles/glfw.dir/src/nsgl_context.m.o
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/glfw.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = glfw
-  TARGET_PDB = glfw.dbg
+  TARGET_FILE = libglfw.a
+  TARGET_PDB = glfw.a.dbg
 
 
 #############################################
@@ -269,6 +260,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build glfw: phony libglfw.a
+
 # =============================================================================
 # Folder targets.
 
@@ -277,7 +270,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/dolphilia/github/reglfw/glfw/cmake-build-debug
 
-build all: phony glfw
+build all: phony libglfw.a
 
 # =============================================================================
 # Built-in targets

@@ -1,7 +1,7 @@
 # ninja log v6
 202	232	1723034198191669502	CMakeFiles/glfw.dir/src/posix_thread.c.o	53211845d6ecdea3
 176	221	1723034198166215210	CMakeFiles/glfw.dir/src/cocoa_time.c.o	eaa1c31e19193848
-1	43	1725428283532235104	build.ninja	6fbe829e9d495029
+1	43	1725798261769714001	build.ninja	6fbe829e9d495029
 171	202	1723034198160606025	CMakeFiles/glfw.dir/src/null_joystick.c.o	fdaf1fb543bac84
 170	214	1723034198160321066	CMakeFiles/glfw.dir/src/null_window.c.o	c5cdf51ccfda3a16
 168	204	1723034198158236976	CMakeFiles/glfw.dir/src/null_init.c.o	3be7cd6854fb889a

@@ -87,8 +87,8 @@ elseif(UNIX AND NOT APPLE)
     )
 endif()
 
-add_executable(glfw main.c ${SOURCE_FILES})
-#add_library(glfw SHARED ${SOURCE_FILES})
+#add_executable(glfw main.c ${SOURCE_FILES})
+add_library(glfw STATIC ${SOURCE_FILES})
 
 if (APPLE)
     target_link_libraries(glfw
